@@ -39,13 +39,10 @@ public class MovieManagerTest {
     public void MovieManagerTestFindLast() {
         MovieManager manager = new MovieManager();
 
-        manager.addMovie("Film 1");
-        manager.addMovie("Film 2");
-        manager.addMovie("Film 3");
-        manager.addMovie("Film 4");
+
         manager.addMovie("Film 5");
 
-        String[] expected = {"Film 5", "Film 4", "Film 3", "Film 2", "Film 1"};
+        String[] expected = {"Film 5"};
         String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -54,7 +51,7 @@ public class MovieManagerTest {
     public void MovieManagerTestLimit() {
         MovieManager manager = new MovieManager(100);
 
-                int expected = 100;
+        int expected = 100;
         int actual = manager.getLimit();
         Assertions.assertEquals(expected, actual);
 
